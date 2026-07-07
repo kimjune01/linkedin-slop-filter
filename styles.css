@@ -1,0 +1,81 @@
+/* LinkedIn Slop Filter — injected styles */
+
+.lsf-collapsed {
+  display: none !important;
+}
+
+.lsf-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f3f2ef;
+  border: 1px solid #d9d6d0;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #5b5750;
+}
+
+.lsf-bar .lsf-tag {
+  font-weight: 600;
+  color: #6b5b00;
+}
+
+.lsf-bar .lsf-score {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.lsf-bar .lsf-why {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.lsf-bar .lsf-show {
+  margin-left: auto;
+  padding: 4px 12px;
+  border: 1px solid #9c9791;
+  border-radius: 999px;
+  background: transparent;
+  color: #46433d;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lsf-bar .lsf-show:hover {
+  background: #e6e3dd;
+}
+
+#lsf-pill {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 2147483647;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: background 0.15s ease;
+}
+#lsf-pill[data-state="off"]   { background: #6b7280; }
+#lsf-pill[data-state="busy"]  { background: #b45309; }
+#lsf-pill[data-state="on"]    { background: #15803d; }
+
+@media (prefers-color-scheme: dark) {
+  .lsf-bar {
+    background: #1b1f23;
+    border-color: #33383d;
+    color: #b9bec4;
+  }
+  .lsf-bar .lsf-tag { color: #d9c24a; }
+  .lsf-bar .lsf-show { border-color: #4a5057; color: #cfd4d9; }
+  .lsf-bar .lsf-show:hover { background: #262b30; }
+}
