@@ -113,7 +113,7 @@ POST:
     const bar = document.createElement("div");
     bar.className = "lsf-bar";
     bar.innerHTML =
-      `<span class="lsf-tag">🫥 Hidden AI slop</span>` +
+      `<span class="lsf-tag">🧹 Swept AI slop</span>` +
       `<span class="lsf-score">score ${result.slop}/10</span>` +
       (result.why ? `<span class="lsf-why">${escapeHtml(result.why)}</span>` : "") +
       `<button class="lsf-show" type="button">Show anyway</button>`;

@@ -19,7 +19,7 @@ Every post is judged by Chrome's **built-in on-device model** (Gemini Nano). No 
 2. **Score.** One local prompt rates it 0–10 for slop.
 3. **Collapse.** Anything scoring ≥ 7 folds into a slim bar you can expand:
 
-   > 🫥 Hidden AI slop · score 9/10 · *"generic, vague, engagement bait"* &nbsp; **[Show anyway]**
+   > 🧹 Swept AI slop · score 9/10 · *"generic, vague, engagement bait"* &nbsp; **[Show anyway]**
 
 A pill in the bottom-right toggles it on/off and keeps a running count of what it hid.
 
