@@ -22,24 +22,24 @@ Chrome ships the model's API, not its weights. The first time anything on your m
 
 ## Requirements
 
-Chrome 138 or newer on desktop (Mac, Windows, or Linux, not Android or iOS). You'll want around 8 GB of RAM and 4 GB of free disk for the model. On older Chrome you may need to enable two flags and restart: set `chrome://flags/#prompt-api-for-gemini-nano` to Enabled, and `chrome://flags/#optimization-guide-on-device-model` to Enabled BypassPerfRequirement.
+Chrome 138 or newer on desktop (Mac, Windows, or Linux, not Android or iOS). You'll want around 8 GB of RAM and 4 GB of free disk for the model. Recent Chrome runs this out of the box; only on older builds do you need to enable two flags and restart, setting `chrome://flags/#prompt-api-for-gemini-nano` to Enabled and `chrome://flags/#optimization-guide-on-device-model` to Enabled BypassPerfRequirement.
 
 ## Install
 
-It's not on the Web Store, so you load it as an unpacked extension. It takes about a minute.
+It's not on the Web Store, so you load it as an unpacked extension.
 
 1. Get the code: the green Code button, then Download ZIP, then unzip it. Or clone the repo.
 2. Open `chrome://extensions`.
 3. Turn on Developer mode, top-right.
 4. Click Load unpacked and pick the `linkedin-slop-filter` folder.
 5. Open linkedin.com/feed. A grey "Slop filter: off" pill appears in the bottom-right.
-6. Click the pill. The first time, it downloads the model; after that it goes green and starts sweeping as you scroll.
+6. Click the pill. The first time, it downloads the model (a few GB, once); after that it goes green and starts sweeping as you scroll. If your Chrome can't run the model, the pill says Unavailable instead of turning green.
 
 The on/off state is remembered.
 
 ## The prompt
 
-The classifier is a single prompt in `content.js` (`buildPrompt`), grounded in what people actually complain about online: [broetry](https://www.buzzfeednews.com/article/ryanmac/why-are-these-posts-taking-over-your-linkedin-feed-because) line breaks, "thrilled to announce," engagement bait, buzzwords. But every source agrees those surface tells are unreliable alone, because humans use them too. So specificity decides: any real number, name, technical detail, actual problem, or genuine question drags the score down; generic advice that could apply to anyone drives it up. To make it stricter or looser, change `THRESHOLD` in `content.js` and reload the extension.
+The classifier is a single prompt in `content.js` (`buildPrompt`), grounded in what people actually complain about online: [broetry](https://www.buzzfeednews.com/article/ryanmac/why-are-these-posts-taking-over-your-linkedin-feed-because) line breaks, "thrilled to announce," engagement bait, buzzwords. But those surface tells are unreliable alone, because humans use them too. So specificity decides: any real number, name, technical detail, actual problem, or genuine question drags the score down; generic advice that could apply to anyone drives it up. To make it stricter or looser, change `THRESHOLD` in `content.js` and reload the extension.
 
 ## Honest limitations
 
@@ -51,7 +51,7 @@ There's no backend. The extension asks for no permissions beyond running on link
 
 ## License
 
-Copyright © 2026 June Kim. AGPL-3.0. Copyleft: modify it and run it as a service, and you have to publish your source. Otherwise, fork it, sharpen the prompt, point it at Twitter. Go wild.
+Copyright © 2026 June Kim. AGPL-3.0. Copyleft: if you distribute a modified version, publish the source under the same license. Otherwise, fork it, sharpen the prompt, point it at Twitter. Go wild.
 
 ## Contributing
 
